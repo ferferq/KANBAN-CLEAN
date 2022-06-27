@@ -61,7 +61,7 @@ const CardFormComponent: React.FC<Props> = ({
           indexCard,
         );
       }
-      setState({ ...state, isLoading: false });
+      setState({ ...state, isLoading: false, title: '', description: '' });
     } catch (error) {
       setState({
         ...state,
