@@ -7,6 +7,10 @@ export const CardShowContainer = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
+
+  h2 {
+    overflow-x: auto;
+  }
 `;
 
 export const CardHeader = styled.header`

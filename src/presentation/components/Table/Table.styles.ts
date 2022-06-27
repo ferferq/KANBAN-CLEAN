@@ -10,8 +10,8 @@ export const ColumnsContainer = styled.tr`
   padding: 0 2%;
 
   th {
-    width: 17rem;
     min-width: 17rem;
+    max-width: 17rem;
     vertical-align: top;
 
     div + div {
