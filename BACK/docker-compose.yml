@@ -1,0 +1,7 @@
+version: "3.9"
+
+services:
+    kanban-only-back:
+      image: kanban-back:latest
+      ports:
+        - 5000:5000
