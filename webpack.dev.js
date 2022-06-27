@@ -15,13 +15,13 @@ module.exports = merge(common, {
   },
   devServer: {
     static: {
-      directory: path.resolve(__dirname, "public"),
+      directory: path.resolve(__dirname, "dist"),
     },
     devMiddleware: {
       writeToDisk: true,
     },
     historyApiFallback: true,
-    port: 8080,
+    port: 3000,
   },
   plugins: [
     new DefinePlugin({
