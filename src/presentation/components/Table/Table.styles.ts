@@ -33,6 +33,7 @@ export const HeaderContainer = styled.tr`
 
 export const ContainerTh = styled.section`
   width: 100%;
+  padding-bottom: 1rem;
   height: 85vh;
   overflow-y: auto;
 `;
