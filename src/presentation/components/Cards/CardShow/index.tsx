@@ -1,5 +1,5 @@
 import { TextAreaSmall, TextMedium } from '@/presentation/styles/texts';
-import React, { useContext } from 'react';
+import React, { memo, useContext } from 'react';
 import { CardContainer } from '../Card.styles';
 import {
   CardFooter,
@@ -20,7 +20,7 @@ import { useMarked } from '@/presentation/utils/use-marked';
 
 const indexBeforeColumnCreate = 1;
 
-export const CardShow: React.FC<CardProps> = ({
+const CardShowComponent: React.FC<CardProps> = ({
   data,
   indexColumn = indexBeforeColumnCreate,
   indexCard = 0,
@@ -105,3 +105,7 @@ export const CardShow: React.FC<CardProps> = ({
     </CardContainer>
   );
 };
+
+export const CardShow = memo(CardShowComponent, (prevProps, nextProps) => {
+  return Object.is(prevProps, nextProps);
+});

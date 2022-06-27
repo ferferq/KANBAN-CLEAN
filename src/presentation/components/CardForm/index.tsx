@@ -1,4 +1,4 @@
-import React, { ReactNode, useContext, useState } from 'react';
+import React, { memo, ReactNode, useContext, useState } from 'react';
 import { Input } from '@/presentation/components/Input';
 import { TextArea } from '@/presentation/components/TextArea';
 import { FormContainer } from './CardForm.styles';
@@ -16,7 +16,7 @@ type Props = {
   indexCard?: number;
 };
 
-export const CardForm: React.FC<Props> = ({
+const CardFormComponent: React.FC<Props> = ({
   info,
   childrenFooter,
   indexColumn,
@@ -57,7 +57,7 @@ export const CardForm: React.FC<Props> = ({
             description,
             list: info.list,
           },
-          COLUMNS_BY_ORDER[indexColumn - 1],
+          COLUMNS_BY_ORDER[indexColumn],
           indexCard,
         );
       }
@@ -85,3 +85,10 @@ export const CardForm: React.FC<Props> = ({
     </ContextForm.Provider>
   );
 };
+
+export const CardForm = memo(CardFormComponent, (prevProps, nextProps) => {
+  return (
+    (!prevProps.info && !nextProps.info) ||
+    Object.is(prevProps.info, nextProps.info)
+  );
+});

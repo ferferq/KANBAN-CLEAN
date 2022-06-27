@@ -24,7 +24,7 @@ const FooterCardCreate: React.FC<CardProps> = ({
         onClick={async () =>
           await hadleUpdateTypeCard(
             CardType.SHOW,
-            COLUMNS_BY_ORDER[indexColumn - 1],
+            COLUMNS_BY_ORDER[indexColumn],
             indexCard,
           )
         }

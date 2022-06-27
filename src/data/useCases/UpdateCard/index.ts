@@ -3,6 +3,7 @@ import { UpdateCard } from '@/domain/useCases/UpdateCard';
 import { HttpClient, HttpStatusCode } from '@/data/protocols/http';
 import { CardInfoApiResponse } from '@/data/protocols/Cards/create-card';
 import { CardInfo } from '@/domain/models/Card';
+import { FieldsRequiredCreateCard } from '@/domain/errors/fields-required-create-card';
 
 export class UpdateCardUseCase implements UpdateCard {
   constructor(
@@ -23,9 +24,10 @@ export class UpdateCardUseCase implements UpdateCard {
     });
 
     switch (httpResponse.statusCode) {
-      case HttpStatusCode.ok: {
+      case HttpStatusCode.ok:
         return;
-      }
+      case HttpStatusCode.badRequest:
+        throw new FieldsRequiredCreateCard();
       default:
         throw new UnexpectedError();
     }

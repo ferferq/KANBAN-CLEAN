@@ -1,5 +1,5 @@
 import { TextMedium } from '@/presentation/styles/texts';
-import React, { useContext } from 'react';
+import React, { memo, useContext } from 'react';
 import { TextAreaContainer } from './TextArea.styles';
 import ContextForm from '@/presentation/contexts/form/form-context';
 
