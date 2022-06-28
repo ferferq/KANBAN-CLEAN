@@ -8,8 +8,10 @@ export const Table: React.FC<TableProps> = ({ columns }: TableProps) => {
   return (
     <ContainerTable>
       <table style={{ width: '100%' }}>
-        <TableHeader columns={columns} />
-        <TableBodyCard columns={columns} />
+        <tbody style={{ width: '100%' }}>
+          <TableHeader columns={columns} />
+          <TableBodyCard columns={columns} />
+        </tbody>
       </table>
     </ContainerTable>
   );
