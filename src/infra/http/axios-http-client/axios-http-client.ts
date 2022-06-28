@@ -16,6 +16,7 @@ export class AxiosHttpClient implements HttpClient<any> {
     if (this.interceptorsResponse) {
       this.api.interceptors.response.use(
         this.interceptorsResponse.response,
+        /* istanbul ignore next */
         async (error: AxiosError) => {
           return await this.interceptorsResponse.responseError(error, this.api);
         },
