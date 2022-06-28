@@ -2,11 +2,11 @@ version: "3.9"
 
 services:
     kanban-back:
-      image: kanban-back:latest
+      image: ferferq/kanban-backend:latest
       ports:
         - 5000:5000
     kanban-web:
-      image: kanban-web:latest
+      image: ferferq/kanban-web:latest
       ports:
         - 8080:8080
       environment:
